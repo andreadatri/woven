@@ -1,41 +1,37 @@
 /**
- * Scene data for the scroll-scrub journey — THE file you fill in per build.
+ * Scene data for the LOOMERE scroll-scrub journey.
  *
- * Single-shot (the default): ONE entry in `scenes`, whose `clip` is the single
- * continuous film. Chapter copy still comes from `chapters` below, rendered as
- * semantic sections over that one clip.
- *
- * Multi-leg (opt-in): one entry per seam-locked leg, in journey order. Every
- * `poster` MUST be the exact first frame of the encoded clip beside it — never
- * a design board or an imagined destination still.
- *
- * Keep this array a module constant. Changing its identity on every render
- * intentionally rebuilds the media controller.
+ * Single-shot: ONE entry, whose clip is the one continuous 15s macro film of
+ * the coral filament winding itself into the polo. The six chapters of the
+ * make are rendered as semantic sections over and after it.
  */
 import type {
   ScrollScrubScene,
   ScrollScrubTheme,
 } from "@/components/scroll-scrub/scroll-scrub";
 
-/** Brand tokens for the journey layer. Set these from the design brief. */
 export const scrollScrubTheme: ScrollScrubTheme = {
-  accent: "<accent hex>",
-  background: "<background hex>",
-  ink: "<ink hex>",
-  muted: "<muted ink hex>",
+  accent: "#d0452f",
+  background: "#16211c",
+  ink: "#f4eee2",
+  muted: "rgba(244, 238, 226, 0.72)",
 };
 
 export const scrollScrubScenes: ScrollScrubScene[] = [
   {
-    body: "<one sentence that earns the next scroll>",
-    clip: "/assets/world/scene-01.mp4",
     id: "scene-01",
-    kicker: "<kicker>",
-    label: "<nav label>",
+    label: "The film",
+    kicker: "Knitwear, Prato",
+    title: "One thread. One polo.",
+    body: "A single coral filament, wound into 240 grams of long staple cotton. One shirt, five colourways, twice a year.",
+    align: "left",
+    scroll: 3.4,
+    linger: 0.16,
+    objectPosition: "50% 46%",
+    mobileObjectPosition: "56% 50%",
+    poster: "/assets/world/scene-01-poster.webp",
+    mobilePoster: "/assets/world/scene-01-mobile-poster.webp",
+    clip: "/assets/world/scene-01.mp4",
     mobileClip: "/assets/world/scene-01-mobile.mp4",
-    mobilePoster: "/assets/world/scene-01-mobile-poster.png",
-    poster: "/assets/world/scene-01-poster.png",
-    tags: ["<proof tag>"],
-    title: "<scene headline>",
   },
 ];

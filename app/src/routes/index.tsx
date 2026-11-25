@@ -1,24 +1,38 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import { ScrollScrub } from "@/components/scroll-scrub/scroll-scrub";
-import { scrollScrubScenes, scrollScrubTheme } from "@/scroll-scrub-scenes";
+import { LoomereHome } from "@/components/loomere/page";
 
 export const Route = createFileRoute("/")({
-  // No title/description here on purpose: the home page inherits the site's
-  // editable page metadata from the root route (title/favicon/og), so a shared
-  // link to "/" shows the owner's values. Add a `head` here only to give a
-  // SPECIFIC page its own title/description.
+  // Title, description and social card come from the site metadata in the root
+  // route. Only the icon set and the manifest belong to this page; the theme
+  // colour travels with the manifest.
+  head: () => ({
+    meta: [{ name: "apple-mobile-web-app-title", content: "Loomere" }],
+    links: [
+      { rel: "manifest", href: "/site.webmanifest" },
+      {
+        rel: "icon",
+        type: "image/svg+xml",
+        href: "/assets/head/favicon.svg",
+      },
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "32x32",
+        href: "/assets/head/favicon-32.png",
+      },
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "16x16",
+        href: "/assets/head/favicon-16.png",
+      },
+      { rel: "apple-touch-icon", href: "/assets/head/apple-touch-icon.png" },
+    ],
+  }),
   component: Index,
 });
 
-// The whole page IS the journey: the scrub controller owns media time, while
-// every chapter stays server-rendered in ordinary semantic flow. Compose the
-// site's own nav and bespoke CTAs around <ScrollScrub />; the engine
-// deliberately ships no header, no shared button system, and no scroll hint.
 function Index() {
-  return (
-    <main>
-      <ScrollScrub scenes={scrollScrubScenes} theme={scrollScrubTheme} />
-    </main>
-  );
+  return <LoomereHome />;
 }

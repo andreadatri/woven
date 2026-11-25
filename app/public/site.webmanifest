@@ -1,0 +1,19 @@
+{
+  "name": "LOOMERE",
+  "short_name": "Loomere",
+  "description": "A knitwear atelier in Prato. One coral polo, four pastel colourways.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F4EEE2",
+  "theme_color": "#16211C",
+  "icons": [
+    { "src": "/assets/head/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/assets/head/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    {
+      "src": "/assets/head/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

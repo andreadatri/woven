@@ -1,0 +1,165 @@
+/* LOOMERE section refinements layered on top of loomere.css. */
+
+.lm-name {
+  margin: 0 0 1.1rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--lm-coral);
+}
+
+/* dark chapter one */
+
+.lm-thread--ink {
+  background: var(--lm-ink);
+  color: var(--lm-ivory);
+}
+
+.lm-thread--ink .lm-thread__copy {
+  border-left-color: var(--lm-hair-light);
+}
+
+.lm-thread--ink .lm-h2 {
+  color: var(--lm-ivory);
+}
+
+.lm-thread--ink .lm-body {
+  color: rgb(244 238 226 / 0.68);
+}
+
+.lm-thread--ink .lm-facts {
+  border-top-color: var(--lm-hair-light);
+}
+
+.lm-thread--ink .lm-facts li {
+  color: rgb(244 238 226 / 0.52);
+}
+
+.lm-thread--ink .lm-threadlink {
+  color: var(--lm-ivory);
+}
+
+@media (max-width: 980px) {
+  .lm-thread--ink .lm-thread__copy {
+    border-top-color: var(--lm-hair-light);
+  }
+}
+
+/* panels and heads */
+
+.lm-bleed__panel .lm-name,
+.lm-reserve .lm-name {
+  color: var(--lm-coral);
+}
+
+.lm-detail {
+  margin: 0;
+}
+
+.lm-detail__cap {
+  padding: 0 0 1.1rem;
+}
+
+.lm-placket__head .lm-body,
+.lm-wear__head .lm-body {
+  margin-top: 0;
+}
+
+.lm-wear__head .lm-h2 {
+  max-width: 16ch;
+}
+
+.lm-ledger li:last-child {
+  border-bottom-color: var(--lm-hair-strong);
+}
+
+/* reserve */
+
+.lm-reserve .lm-body {
+  color: rgb(244 238 226 / 0.66);
+  max-width: 42ch;
+}
+
+.lm-reserve__knot {
+  display: block;
+  margin-bottom: 1.75rem;
+  color: var(--lm-coral);
+}
+
+/* colour section */
+
+.lm-colour__foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2.25rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--lm-hair);
+}
+
+.lm-colour__note {
+  max-width: 32ch;
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: var(--lm-ink-55);
+}
+
+.lm-colour__wayname {
+  margin: 0;
+  font-family: var(--lm-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
+}
+
+.lm-colour__foot .lm-price {
+  margin-top: 0.3rem;
+}
+
+/* form rows */
+
+.lm-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.15rem;
+}
+
+.lm-field__legend {
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--lm-ink-55);
+}
+
+@media (max-width: 560px) {
+  .lm-form__row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.lm-modal__aside .lm-knot {
+  color: var(--lm-coral);
+}
+
+.lm-footer .lm-brand {
+  color: var(--lm-ink);
+}
+
+.lm-footer .lm-brand .lm-knot {
+  color: var(--lm-coral);
+}
+
+.lm-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}

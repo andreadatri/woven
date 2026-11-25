@@ -6,13 +6,15 @@ export function applySecurityHeaders(response: Response): Response {
   const headers = new Headers(response.headers);
   // The deployment platform owns `frame-ancestors`; setting it here would add
   // a second, intersecting policy that can block the host preview.
+  // `blob:` is required in media-src because the scroll-scrub controller seeks
+  // clips through Blob URLs it creates at runtime.
   headers.set(
     "Content-Security-Policy",
     "default-src 'self'; " +
       "script-src 'self' 'unsafe-inline'; " +
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; " +
       "font-src 'self' https://fonts.gstatic.com; " +
-      "img-src 'self' data: https:; media-src 'self' https:; " +
+      "img-src 'self' data: https:; media-src 'self' blob: https:; " +
       "connect-src 'self' https:; " +
       "frame-src 'self' https://auth.higgsfield.app https://auth.higgsfield-dev.app; " +
       "base-uri 'self'; form-action 'self'",
